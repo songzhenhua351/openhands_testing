@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI技术前沿 - 欢迎页</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS"
+          crossorigin="anonymous">
 </head>
 <body>
+    <a href="#main" class="skip-link">跳至主要内容</a>
     <header>
         <div class="logo">
             <h1>AI<span>Tech</span>Hub</h1>
         </div>
-        <nav>
+        <nav role="navigation" aria-label="主导航">
             <ul>
                 <li><a href="#real-time-info">实时资讯</a></li>
                 <li><a href="#ai-insights">AI洞察</a></li>
@@ -35,7 +39,7 @@
         </div>
     </section>
 
-    <main>
+    <main id="main">
         <section id="real-time-info" class="content-section">
             <div class="section-header">
                 <h2><i class="fas fa-newspaper"></i> 实时资讯</h2>

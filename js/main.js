@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initially set height to 0
     trendBars.forEach(bar => {
-        const originalHeight = bar.style.height;
+        const originalHeight = bar.style.height || getComputedStyle(bar).height;
         bar.style.height = '0%';
         bar.dataset.targetHeight = originalHeight;
     });
@@ -70,8 +70,22 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 
-    // Run animation check on scroll
-    window.addEventListener('scroll', animateOnScroll);
+    // Throttle function for performance
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        }
+    }
+
+    // Run animation check on scroll with throttling
+    window.addEventListener('scroll', throttle(animateOnScroll, 16));
     
     // Run once on page load
     animateOnScroll();

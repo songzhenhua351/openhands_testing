@@ -17,6 +17,22 @@
     box-sizing: border-box;
 }
 
+/* Accessibility - Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    z-index: 1000;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -170,6 +186,12 @@ nav ul li a:hover {
     100% {
         transform: scale(1.2);
         opacity: 0.8;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .network-animation {
+        animation: none;
     }
 }
 
