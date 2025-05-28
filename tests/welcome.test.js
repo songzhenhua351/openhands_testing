@@ -67,6 +67,18 @@ describe('Welcome Page', () => {
     expect(communitySection).not.toBeNull();
     expect(communitySection.querySelector('h2').textContent).toContain('开发者社区');
   });
+  
+  test('should have a link to aibase.com in the real-time info section', () => {
+    const realTimeInfoSection = document.getElementById('real-time-info');
+    expect(realTimeInfoSection).not.toBeNull();
+    
+    // Check if the section header has a link to aibase.com
+    const sectionHeader = realTimeInfoSection.querySelector('.section-header');
+    const headerLink = sectionHeader.querySelector('a');
+    expect(headerLink).not.toBeNull();
+    expect(headerLink.href).toContain('www.aibase.com');
+    expect(headerLink.textContent).toContain('实时资讯');
+  });
 
   test('should have a footer', () => {
     const footer = document.querySelector('footer');
