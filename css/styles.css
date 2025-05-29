@@ -156,11 +156,14 @@ nav ul li a:hover {
     font-size: 1rem;
     border-radius: 30px;
     box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    display: inline-block;
+    text-decoration: none;
 }
 
 .cta-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+    color: white;
 }
 
 .hero-animation {

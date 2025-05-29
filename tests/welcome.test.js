@@ -40,6 +40,15 @@ describe('Welcome Page', () => {
     const ctaButton = heroContent.querySelector('.cta-button');
     expect(ctaButton).not.toBeNull();
   });
+  
+  test('should have the "立即探索" button link to Baidu', () => {
+    const heroSection = document.querySelector('.hero');
+    const ctaButton = heroSection.querySelector('.cta-button');
+    expect(ctaButton).not.toBeNull();
+    expect(ctaButton.tagName.toLowerCase()).toBe('a');
+    expect(ctaButton.href).toBe('https://www.baidu.com/');
+    expect(ctaButton.textContent).toBe('立即探索');
+  });
 
   test('should have all six required content sections', () => {
     // Check for the six core sections mentioned in the issue
