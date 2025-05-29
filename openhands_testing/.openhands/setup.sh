@@ -3,6 +3,9 @@
 # 设置项目环境
 echo "Setting up AITechHub project environment..."
 
+# 确保在正确的目录中
+cd /workspace
+
 # 安装依赖（如果有的话）
 if [ -f "package.json" ]; then
   echo "Installing npm dependencies..."
